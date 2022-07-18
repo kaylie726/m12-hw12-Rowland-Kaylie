@@ -13,6 +13,10 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 9fr;
+  grid-template-areas: 
+    "header header"
+    "nav img_card__container"
+    "footer footer";
   grid-gap: 5%;
   background-color: white;
   width: 100%;
@@ -24,7 +28,7 @@ body {
   display: grid;
   align-items: center;
   justify-items: center;
-  grid-area: 1 / 1 / 1 / span 4;
+  grid-area: header;
   margin-bottom: 0%;
   width: 100%;
 }
@@ -86,11 +90,63 @@ body {
   display: grid;
   align-items: center;
   justify-items: center;
-  grid-area: 4 / 1 / 4 / span 4;
+  grid-area: footer;
   color: black;
 }
 
+.img_card__container {
+  display: grid;
+  grid-template-columns: 2.5fr 2.5fr 2.5fr 2.5fr;
+  grid-gap: 2%;
+  grid-area: img_card__container;
+  width: 100%;
+}
+
+.nav {
+  grid-area: nav;
+}
+
+
+
+
 @media screen and (max-width: 1100px) {
+  body {
+    font-family: 'Indie Flower', cursive;
+    font-size: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 1%;
+    background-color: white;
+    width: 100%;
+    grid-template-areas:
+      "header"
+      "nav"
+      "img_card__container"
+      "footer";
+  }  
+
+  .header {
+    background-color: var(--primary);
+    color: var(--white);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-area: header;
+    margin-bottom: 0%;
+    width: 100%;
+  }
+
+  .img_card__container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 0%;
+    grid-area: img_card__container;
+    width: 100%;
+  }
+
   .header__title {
     font-size: 2rem;
   }
@@ -108,17 +164,17 @@ body {
   .nav__link::after, .nav__link--active::after {
     display: none;
   }
-}
 
-.img_card__container {
-  display: grid;
-  grid-template-columns: 2.5fr 2.5fr 2.5fr 2.5fr;
-  grid-gap: 2%;
-  grid-area: 2 / 2 / 4 / 4;
-  width: 100%;
-}
+  .nav {
+    grid-area: nav;
+    width: 100%;
+  }
 
-.nav {
-  grid-area: 2 / 1 / 2 / 1;
-  padding: 0 0 0 60px;
+  .footer {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-area: footer;
+    color: black;
+  }
 }
