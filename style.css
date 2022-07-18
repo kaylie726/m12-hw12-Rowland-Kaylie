@@ -143,7 +143,10 @@ body {
     display: grid;
     grid-template-columns: 100%;
     grid-gap: 0%;
+    align-items: center;
+    justify-items: center;
     grid-area: img_card__container;
+    margin-bottom: 0%;
     width: 100%;
   }
 
@@ -151,8 +154,11 @@ body {
     font-size: 2rem;
   }
   .nav__container {
-    width: 80vw;
-    min-width: 300px;
+    align-items: center;
+    justify-items: center;
+    grid-area: nav;
+    margin-bottom: 0%;
+    width: 100%;
     grid-template-columns: repeat(4, 1fr);
   }
   .nav__link, .nav__link--active {
@@ -164,17 +170,14 @@ body {
   .nav__link::after, .nav__link--active::after {
     display: none;
   }
-
-  .nav {
-    grid-area: nav;
-    width: 100%;
-  }
-
+  
   .footer {
     display: grid;
     align-items: center;
     justify-items: center;
     grid-area: footer;
+    margin-bottom: 0%;
+    width: 100%;
     color: black;
   }
 }
